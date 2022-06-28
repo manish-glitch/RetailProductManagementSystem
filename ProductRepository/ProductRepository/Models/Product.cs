@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
+#nullable disable
 
 namespace ProductRepository.Models
 {
-    class Product
+    public partial class Product
     {
+        public string ProductId { get; set; }
+        public string ProductName { get; set; }
+        public string ProductDescription { get; set; }
+        public decimal? Price { get; set; }
+        public int? Rating { get; set; }
     }
 }
