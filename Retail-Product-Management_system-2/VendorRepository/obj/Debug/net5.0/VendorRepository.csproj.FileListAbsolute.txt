@@ -1,0 +1,15 @@
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\bin\Debug\net5.0\VendorRepository.deps.json
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\bin\Debug\net5.0\VendorRepository.runtimeconfig.json
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\bin\Debug\net5.0\VendorRepository.runtimeconfig.dev.json
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\bin\Debug\net5.0\VendorRepository.dll
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\bin\Debug\net5.0\ref\VendorRepository.dll
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\bin\Debug\net5.0\VendorRepository.pdb
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\obj\Debug\net5.0\VendorRepository.csproj.AssemblyReference.cache
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\obj\Debug\net5.0\VendorRepository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\obj\Debug\net5.0\VendorRepository.AssemblyInfoInputs.cache
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\obj\Debug\net5.0\VendorRepository.AssemblyInfo.cs
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\obj\Debug\net5.0\VendorRepository.csproj.CoreCompileInputs.cache
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\obj\Debug\net5.0\VendorRepository.dll
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\obj\Debug\net5.0\ref\VendorRepository.dll
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\obj\Debug\net5.0\VendorRepository.pdb
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\VendorRepository\obj\Debug\net5.0\VendorRepository.genruntimeconfig.cache

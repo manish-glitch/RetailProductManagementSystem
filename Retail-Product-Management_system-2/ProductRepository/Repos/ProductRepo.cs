@@ -61,6 +61,7 @@ namespace ProductRepository.Repos
             Product pro2edit = await GetProductById(proId);
             pro2edit.ProductName = product.ProductName;
             pro2edit.ProductDescription = product.ProductDescription;
+            pro2edit.Image_name = product.Image_name;
             pro2edit.Price = product.Price;
             await ctx.SaveChangesAsync();
         }
