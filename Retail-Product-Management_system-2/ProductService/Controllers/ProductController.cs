@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using ProductRepository.Models;
 using ProductRepository.Repos;
+using RabbitMQ.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ProductService.Controllers
@@ -52,10 +55,24 @@ namespace ProductService.Controllers
                 return NotFound(ex.Message);
             }
         }
+
+        //RabbitMQ
+        private void PublishToMessageQueue(string integrationEvent, string eventData)
+        {
+            var factory = new ConnectionFactory();
+            var connection = factory.CreateConnection();
+            var channel = connection.CreateModel();
+            var body = Encoding.UTF8.GetBytes(eventData);
+            channel.BasicPublish(exchange: "product", routingKey: integrationEvent, basicProperties: null, body: body);
+        }
+
+
         [HttpPost]
         public async Task<ActionResult<Product>> Insert(Product product)
         {
             await proRepo.InsertProduct(product);
+            var integrationEventData = JsonConvert.SerializeObject(new { ProductId = product.ProductId,ProductName=product.ProductName });
+            PublishToMessageQueue("product.add", integrationEventData);
             return Created($"api/Product/{product.ProductId}", product);
         }
         [HttpPut("{proId}")]
@@ -68,6 +85,7 @@ namespace ProductService.Controllers
         public async Task<ActionResult> Delete(string proId)
         {
             await proRepo.DeleteProduct(proId);
+            
             return Ok();
         }
     }

@@ -58,3 +58,4 @@ D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProductService\obj\Debug\net5.0\ref\ProductService.dll
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProductService\obj\Debug\net5.0\ProductService.pdb
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProductService\obj\Debug\net5.0\ProductService.genruntimeconfig.cache
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProductService\bin\Debug\net5.0\RabbitMQ.Client.dll
