@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using RabbitMQ.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using VendorRepository.Models;
 using VendorRepository.Repos;
@@ -60,10 +63,23 @@ namespace VendorService.Controllers
             }
         }
 
+        //RabbitMQ
+        private void PublishToMessageQueue(string integrationEvent, string eventData)
+        {
+            var factory = new ConnectionFactory();
+            var connection = factory.CreateConnection();
+            var channel = connection.CreateModel();
+            var body = Encoding.UTF8.GetBytes(eventData);
+            channel.BasicPublish(exchange: "vendorStock", routingKey: integrationEvent, basicProperties: null, body: body);
+        }
+
+
         [HttpPost("InsertVendorStock")]
         public async Task<ActionResult> InsertVendorStock(VendorStock venStock)
         {
             await venStockRepo.InsertvendorStock(venStock);
+            var integrationEventData = JsonConvert.SerializeObject(new { VendorId = venStock.VendorId, ProductId = venStock.ProductId,StockInHand=venStock.StockInHand });
+            PublishToMessageQueue("vendorStock.add", integrationEventData);
             return Created($"api/VendorStock/{venStock.VendorId}/{venStock.ProductId}", venStock);
         }
 

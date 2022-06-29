@@ -58,3 +58,4 @@ D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyService\obj\Debug\net5.0\ref\ProceedToBuyService.dll
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyService\obj\Debug\net5.0\ProceedToBuyService.pdb
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyService\obj\Debug\net5.0\ProceedToBuyService.genruntimeconfig.cache
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyService\bin\Debug\net5.0\RabbitMQ.Client.dll
