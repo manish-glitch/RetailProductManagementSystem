@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+
+#nullable disable
+
+namespace ProceedToBuyRepository.Models
+{
+    public partial class WishList
+    {
+        public string WishListId { get; set; }
+        public string VendorId { get; set; }
+        public string ProductId { get; set; }
+        public string CustomerId { get; set; }
+        public int Quantity { get; set; }
+        public DateTime? AddedToWishlistDate { get; set; }
+
+        public virtual Customer Customer { get; set; }
+        public virtual Product Product { get; set; }
+        public virtual VendorStock Vendor { get; set; }
+    }
+}

@@ -33,6 +33,7 @@ namespace VendorService
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VendorService", Version = "v1" });
             });
             services.AddScoped<IVendorRepo, VendorRepo>();
+            services.AddScoped<IVendorStockRepo, VendorStockRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

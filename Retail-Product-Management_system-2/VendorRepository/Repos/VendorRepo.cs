@@ -18,12 +18,7 @@ namespace VendorRepository.Repos
             await ctx.SaveChangesAsync();
         }
 
-        public async Task DeletevendorStock(string venId,string proId)
-        {
-            VendorStock venStock2del = await GetVendorStockOfAProduct(venId, proId);
-            ctx.VendorStocks.Remove(venStock2del);
-            await ctx.SaveChangesAsync();
-        }
+       
 
         public async Task<List<Vendor>> GetAllVendors()
         {
@@ -45,31 +40,9 @@ namespace VendorRepository.Repos
 
         }
 
-        public async Task<VendorStock> GetVendorStockOfAProduct(string venId, string proId)
-        {
-            try
-            {
-                VendorStock venStock = await(from v in ctx.VendorStocks where v.VendorId == venId && v.ProductId==proId select v).FirstAsync();
-                return venStock;
-            }
-            catch (Exception)
-            {
-                throw new Exception("this vendor does not have this product in stock");
-            }
-        }
+        
 
-        public async Task<List<VendorStock>> GetVendorStocks(string venId)
-        {
-            List<VendorStock> venStocks = await (from vs in ctx.VendorStocks where vs.VendorId == venId select vs).ToListAsync();
-            if (venStocks.Count != 0)
-            {
-                return venStocks;
-            }
-            else
-            {
-                throw new Exception("no stocks found for this vendor");
-            }
-        }
+        
 
         public async Task InsertVendor(Vendor ven)
         {
@@ -77,10 +50,6 @@ namespace VendorRepository.Repos
             await ctx.SaveChangesAsync();
         }
 
-        public async Task InsertvendorStock(VendorStock venStock)
-        {
-            await ctx.VendorStocks.AddAsync(venStock);
-            await ctx.SaveChangesAsync();
-        }
+        
     }
 }

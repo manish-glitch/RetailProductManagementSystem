@@ -1,0 +1,15 @@
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\bin\Debug\net5.0\ProceedToBuyRepository.deps.json
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\bin\Debug\net5.0\ProceedToBuyRepository.runtimeconfig.json
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\bin\Debug\net5.0\ProceedToBuyRepository.runtimeconfig.dev.json
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\bin\Debug\net5.0\ProceedToBuyRepository.dll
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\bin\Debug\net5.0\ref\ProceedToBuyRepository.dll
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\bin\Debug\net5.0\ProceedToBuyRepository.pdb
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\obj\Debug\net5.0\ProceedToBuyRepository.csproj.AssemblyReference.cache
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\obj\Debug\net5.0\ProceedToBuyRepository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\obj\Debug\net5.0\ProceedToBuyRepository.AssemblyInfoInputs.cache
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\obj\Debug\net5.0\ProceedToBuyRepository.AssemblyInfo.cs
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\obj\Debug\net5.0\ProceedToBuyRepository.csproj.CoreCompileInputs.cache
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\obj\Debug\net5.0\ProceedToBuyRepository.dll
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\obj\Debug\net5.0\ref\ProceedToBuyRepository.dll
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\obj\Debug\net5.0\ProceedToBuyRepository.pdb
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\ProceedToBuyRepository\obj\Debug\net5.0\ProceedToBuyRepository.genruntimeconfig.cache

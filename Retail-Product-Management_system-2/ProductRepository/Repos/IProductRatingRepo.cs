@@ -9,6 +9,8 @@ namespace ProductRepository.Repos
 {
     public interface IProductRatingRepo
     {
+        //GetRatingBYCustomerId
+        //GetRatingByPProductId
         Task<List<ProductRating>> GetAllRatingsOfProduct(string proId);
        
         Task<bool> AddProductRating(ProductRating rating);
