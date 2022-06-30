@@ -23,6 +23,28 @@
       "UpstreamPathTemplate": "/ProductSvc/{everything}"
     },
     {
+      "DownstreamPathTemplate": "/api/ProductRating",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 23070
+        }
+      ],
+      "UpstreamPathTemplate": "/ProductRatingSvc/"
+    },
+    {
+      "DownstreamPathTemplate": "/api/ProductRating/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 23070
+        }
+      ],
+      "UpstreamPathTemplate": "/ProductRatingSvc/{everything}"
+    },
+    {
       "DownstreamPathTemplate": "/api/Vendor",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
@@ -45,18 +67,29 @@
       "UpstreamPathTemplate": "/VendorSvc/{everything}"
     },
     {
-      "DownstreamPathTemplate": "/api/ProceedToBuy",
+      "DownstreamPathTemplate": "/api/VendorStock",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 48060
+          "Port": 1365
         }
       ],
-      "UpstreamPathTemplate": "/ProceedToBuySvc/"
+      "UpstreamPathTemplate": "/VendorStockSvc/"
     },
     {
-      "DownstreamPathTemplate": "/api/ProceedToBuy/{everything}",
+      "DownstreamPathTemplate": "/api/VendorStock/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 1365
+        }
+      ],
+      "UpstreamPathTemplate": "/VendorStockSvc/{everything}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Cart",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -64,8 +97,42 @@
           "Port": 48060
         }
       ],
-      "UpstreamPathTemplate": "/ProceedToBuySvc/{everything}"
-    }/*
+      "UpstreamPathTemplate": "/CartSvc/"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Cart/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 48060
+        }
+      ],
+      "UpstreamPathTemplate": "/CartSvc/{everything}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Wishlist",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 48060
+        }
+      ],
+      "UpstreamPathTemplate": "/WishlistSvc/"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Wishlist/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 48060
+        }
+      ],
+      "UpstreamPathTemplate": "/WishlistSvc/{everything}"
+    }
+    /*
     {
       "DownstreamPathTemplate": "/api/Auth",
       "DownstreamScheme": "http",

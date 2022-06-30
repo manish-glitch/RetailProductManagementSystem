@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ProceedToBuyRepository.Models;
 using ProceedToBuyRepository.Repos;
 using System;
@@ -9,6 +10,7 @@ namespace ProceedToBuyService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class WishlistController : ControllerBase
     {
         IWishlistRepo wRepo;

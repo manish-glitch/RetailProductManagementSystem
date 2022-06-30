@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProceedToBuyRepository.Models;
 using ProceedToBuyRepository.Repos;
@@ -11,6 +12,7 @@ namespace ProceedToBuyService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CartController : ControllerBase
     {
         ICartRepo cRepo;
