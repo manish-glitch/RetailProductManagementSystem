@@ -1,0 +1,17 @@
+create database ProductDB
+use ProductDB
+
+create table Product(
+	ProductId char(4) primary key,
+	ProductName varchar(20) not null,
+	ProductDescription varchar(50),
+	Image_name varchar(30),
+	Price money,
+	Rating int check(Rating>=0 and Rating<=5 )
+)
+
+create table ProductRating(
+	RatingId int primary key identity(1,1),
+	ProductId char(4) references Product(ProductId),
+	Rating int not null
+)

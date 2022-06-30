@@ -1,0 +1,32 @@
+﻿create database ProceedToBuyDB
+use ProceedToBuyDB
+create table Product(
+	ProductId char(4) primary key,
+)
+create table VendorStock(
+	VendorId char(4) not null,
+	ProductId char(4) not null,
+	StockInHand int,
+	primary key(VendorId)
+)
+create table Customer(
+	CustomerId char(4) primary key,
+	CustomerName varchar(20)
+)
+create table Cart(
+	CartId char(4) primary key,
+	ProductId char(4) references Product(ProductId),
+	CustomerId char(4) references Customer(CustomerId),
+	VendorId char(4) references VendorStock(VendorId),
+	Zipcode varchar(6) ,
+	DeliveryDate date 
+)
+create table WishList(
+	WishListId char(4) primary key,
+	VendorId char(4) references VendorStock(VendorId),
+	ProductId char(4) references Product(ProductId),
+	CustomerId char(4) references Customer(CustomerId),
+	Quantity int not null,
+	AddedToWishlistDate date 
+
+)

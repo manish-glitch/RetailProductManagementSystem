@@ -1,0 +1,84 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Product",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 23070
+        }
+      ],
+      "UpstreamPathTemplate": "/ProductSvc/"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Product/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 23070
+        }
+      ],
+      "UpstreamPathTemplate": "/ProductSvc/{everything}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Vendor",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 1365
+        }
+      ],
+      "UpstreamPathTemplate": "/VendorSvc/"
+    },
+    {
+      "DownstreamPathTemplate": "/api/Vendor/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 1365
+        }
+      ],
+      "UpstreamPathTemplate": "/VendorSvc/{everything}"
+    },
+    {
+      "DownstreamPathTemplate": "/api/ProceedToBuy",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 48060
+        }
+      ],
+      "UpstreamPathTemplate": "/ProceedToBuySvc/"
+    },
+    {
+      "DownstreamPathTemplate": "/api/ProceedToBuy/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 48060
+        }
+      ],
+      "UpstreamPathTemplate": "/ProceedToBuySvc/{everything}"
+    }/*
+    {
+      "DownstreamPathTemplate": "/api/Auth",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 35340
+        }
+      ],
+      "UpstreamPathTemplate": "/AuthSvc/"
+    }*/
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:9000"
+  }
+}

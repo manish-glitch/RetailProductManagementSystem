@@ -1,0 +1,22 @@
+﻿create database VendorDB
+use VendorDB
+
+create table Product(
+	ProductId char(4) primary key,
+	ProductName varchar(20)
+)
+
+create table Vendor(
+	VendorId char(4) primary key,
+	VendorName varchar(20) not null,
+	DeliveryCharges money,
+	Rating int
+)
+
+create table VendorStock(
+	ProductId Char(4) references Product(ProductId),
+	VendorId char(4) references Vendor(VendorId),
+	StockInHand int,
+	StockReplenishmentDate date,
+	primary key(ProductId,VendorId)
+)
