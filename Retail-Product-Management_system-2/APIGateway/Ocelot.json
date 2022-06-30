@@ -131,19 +131,19 @@
         }
       ],
       "UpstreamPathTemplate": "/WishlistSvc/{everything}"
-    }
-    /*
+    },
+    
     {
       "DownstreamPathTemplate": "/api/Auth",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 35340
+          "Port": 41479
         }
       ],
       "UpstreamPathTemplate": "/AuthSvc/"
-    }*/
+    }
   ],
   "GlobalConfiguration": {
     "BaseUrl": "http://localhost:9000"
