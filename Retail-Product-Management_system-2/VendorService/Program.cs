@@ -56,12 +56,7 @@ namespace VendorService
                         Console.WriteLine("error");
                     }
                 }
-                /*if (type == "batch.delete")
-                {
-                    Batch btchdel = dbContext.Batches.First(b => b.BatchId == data["BatchId"].Value<string>());
-                    dbContext.Batches.Remove(btchdel);
-                    dbContext.SaveChanges();
-                }*/
+                
             };
             channel.BasicConsume(queue: "product.vendorsvc", autoAck: true, consumer: consumer);
         }

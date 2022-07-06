@@ -45,7 +45,7 @@
       "UpstreamPathTemplate": "/ProductRatingSvc/{everything}"
     },
     {
-      "DownstreamPathTemplate": "/api/Vendor",
+      "DownstreamPathTemplate": "/api/Vendor/",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {

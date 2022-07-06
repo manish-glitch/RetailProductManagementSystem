@@ -68,5 +68,18 @@ namespace ProceedToBuyRepository.Repos
                 throw new Exception("no carts for this product (no one put this product in cart) ");
             }
         }
+
+        public async Task<VendorStock> GetVendorStock(string venId, string proId)
+        {
+            try
+            {
+                VendorStock venStock = await (from vs in ctx.VendorStocks where vs.VendorId == venId && vs.ProductId == proId select vs).FirstAsync();
+                return venStock;
+            }
+            catch (Exception)
+            {
+                throw new Exception("not available!");
+            }
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace VendorRepository.Repos
 {
     public interface IVendorStockRepo
     {
+        Task<List<VendorStock>> GetAllVendorStocks();
         Task<VendorStock> GetVendorStockOfAProduct(string venId, string proId);
         Task<List<VendorStock>> GetVendorStocks(string venId);
        

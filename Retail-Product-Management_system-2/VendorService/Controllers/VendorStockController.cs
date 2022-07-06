@@ -23,7 +23,13 @@ namespace VendorService.Controllers
         {
             venStockRepo = vsRepo;
         }
-        [HttpGet("GetVenodrStocks/{venId}")]
+        [HttpGet]
+        public async Task<ActionResult<List<VendorStock>>> GetAllVendorStocks()
+        {
+            List<VendorStock> venStocks = await venStockRepo.GetAllVendorStocks();
+            return Ok(venStocks);
+        }
+        [HttpGet("GetVendorStocks/{venId}")]
         public async Task<ActionResult<List<VendorStock>>> GetVendorStock(string venId)
         {
             try

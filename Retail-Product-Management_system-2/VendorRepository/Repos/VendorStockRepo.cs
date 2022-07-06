@@ -17,6 +17,11 @@ namespace VendorRepository.Repos
             ctx.VendorStocks.Remove(venStock2del);
             await ctx.SaveChangesAsync();
         }
+        public async Task<List<VendorStock>> GetAllVendorStocks()
+        {
+            List<VendorStock> venStocks = await ctx.VendorStocks.ToListAsync();
+            return venStocks;
+        }
         public async Task<VendorStock> GetVendorStockOfAProduct(string venId, string proId)
         {
             try

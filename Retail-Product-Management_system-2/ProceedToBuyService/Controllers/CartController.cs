@@ -12,7 +12,7 @@ namespace ProceedToBuyService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
     public class CartController : ControllerBase
     {
         ICartRepo cRepo;
@@ -62,6 +62,19 @@ namespace ProceedToBuyService.Controllers
             {
                 Cart cart = await cRepo.GetCartByCustIdAndProId(custId, proId);
                 return cart;
+            }
+            catch(Exception ex)
+            {
+                return NotFound(ex.Message);
+            }
+        }
+        [HttpGet("GetVendorStock/{venId}/{proId}")]
+        public async Task<ActionResult<VendorStock>> GetVendorStock(string venId,string proId)
+        {
+            try
+            {
+                VendorStock venStock = await cRepo.GetVendorStock(venId, proId);
+                return venStock;
             }
             catch(Exception ex)
             {

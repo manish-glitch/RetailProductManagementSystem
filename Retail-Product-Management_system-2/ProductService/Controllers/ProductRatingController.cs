@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProductRepository.Models;
 using ProductRepository.Repos;
@@ -11,7 +12,7 @@ namespace ProductService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    
+    [Authorize]
     public class ProductRatingController : ControllerBase
     {
         IProductRatingRepo pRatingRepo;

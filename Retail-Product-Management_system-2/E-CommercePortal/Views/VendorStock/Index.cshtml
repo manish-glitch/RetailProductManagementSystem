@@ -1,0 +1,55 @@
+﻿@model IEnumerable<VendorRepository.Models.VendorStock>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VendorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockInHand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockReplenishmentDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VendorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockInHand)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StockReplenishmentDate)
+            </td>
+            <td>
+                
+                @Html.ActionLink("DetailsByProductId", "DetailsByProductId", new {  proId = item.ProductId }) |
+                @Html.ActionLink("DetailsByVendorId", "DetailsByVendorId", new { venId = item.VendorId }) |
+                @Html.ActionLink("Details", "Details", new { venId = item.VendorId, proId = item.ProductId }) |
+                @Html.ActionLink("Delete", "Delete", new { venId = item.VendorId, proId = item.ProductId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
