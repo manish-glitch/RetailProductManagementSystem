@@ -42,15 +42,9 @@ namespace E_CommercePortal.Controllers
         [Route("ProductRating/AddProductRating")]
         public async Task<ActionResult> AddProductRating(ProductRating proRating)
         {
-            try
-            {
-                await client.PostAsJsonAsync<ProductRating>("", proRating);
+               await client.PostAsJsonAsync<ProductRating>("", proRating);
                 return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+           
         }
     }
 }

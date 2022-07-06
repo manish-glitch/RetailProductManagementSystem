@@ -85,15 +85,10 @@ namespace E_CommercePortal.Controllers
             string roleName = User.Claims.ToArray()[4].Value;
             string token = await client.GetStringAsync("http://localhost:9000/AuthSvc/?userName=" + userName + "&role=" + roleName + "&key=My name is James Bond");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            try
-            {
+            
                 await client.PostAsJsonAsync<VendorStock>("InsertVendorStock", venStock);
                 return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            
         }
 
        
@@ -120,15 +115,10 @@ namespace E_CommercePortal.Controllers
             string roleName = User.Claims.ToArray()[4].Value;
             string token = await client.GetStringAsync("http://localhost:9000/AuthSvc/?userName=" + userName + "&role=" + roleName + "&key=My name is James Bond");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            try
-            {
+            
                 await client.DeleteAsync("DeleteVendorStock/" + venId + "/" + proId);
                 return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            
         }
     }
 }
