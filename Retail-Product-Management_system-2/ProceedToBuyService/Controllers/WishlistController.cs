@@ -10,7 +10,7 @@ namespace ProceedToBuyService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class WishlistController : ControllerBase
     {
         IWishlistRepo wRepo;

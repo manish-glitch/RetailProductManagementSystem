@@ -12,7 +12,7 @@ namespace ProceedToBuyService.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class CartController : ControllerBase
     {
         ICartRepo cRepo;

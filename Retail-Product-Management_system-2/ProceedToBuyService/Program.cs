@@ -48,10 +48,34 @@ namespace ProceedToBuyService
                     try
                     {
                         dbContext.VendorStocks.Add(new VendorStock() { VendorId = data["VendorId"].Value<string>(), StockInHand = data["StockInHand"].Value<int>(), ProductId = data["ProductId"].Value<string>() });
-                        dbContext.Products.Add(new Product() { ProductId = data["ProductId"].Value<string>()});
-                        dbContext.Vendors.Add(new Vendor() { VendorId = data["VendorId"].Value<string>() });
+                        //dbContext.Products.Add(new Product() { ProductId = data["ProductId"].Value<string>()});
+                        //dbContext.Vendors.Add(new Vendor() { VendorId = data["VendorId"].Value<string>() });
                         dbContext.SaveChanges();
 
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("error");
+                    }
+                }
+                if (type == "product.add")
+                {
+                    try
+                    {
+                        dbContext.Products.Add(new Product() { ProductId = data["ProductId"].Value<string>() });
+                        dbContext.SaveChanges();
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("error");
+                    }
+                }
+                if (type == "vendor.add")
+                {
+                    try
+                    {
+                        dbContext.Vendors.Add(new Vendor() { VendorId = data["VendorId"].Value<string>() });
+                        dbContext.SaveChanges();
                     }
                     catch (Exception)
                     {
@@ -66,6 +90,8 @@ namespace ProceedToBuyService
                 }*/
             };
             channel.BasicConsume(queue: "vendorStock.proceedToBuysvc", autoAck: true, consumer: consumer);
+            channel.BasicConsume(queue: "product.proceedToBuysvc", autoAck: true, consumer: consumer);
+            channel.BasicConsume(queue: "vendor.proceedToBuysvc", autoAck: true, consumer: consumer);
         }
     }
 }
