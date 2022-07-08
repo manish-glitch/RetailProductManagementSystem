@@ -171,8 +171,6 @@ D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\Product\Delete.cshtml.g.cs
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\Product\DetailsByName.cshtml.g.cs
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\Product\Details.cshtml.g.cs
-D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\ProductRating\IndexOfRating.cshtml.g.cs
-D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\ProductRating\AddProductRating.cshtml.g.cs
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\Vendor\Index.cshtml.g.cs
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\Vendor\DetailsById.cshtml.g.cs
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\Vendor\Create.cshtml.g.cs
@@ -194,3 +192,10 @@ D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\Wishlist\GetWishlistByCustomerId.cshtml.g.cs
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\Wishlist\WishlistDetails.cshtml.g.cs
 D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\Wishlist\AddToWishlist.cshtml.g.cs
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\Cart\CartSuccess.cshtml.g.cs
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\Cart\CartError.cshtml.g.cs
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\Product\GetByName.cshtml.g.cs
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\Product\GetById.cshtml.g.cs
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\ProductRating\Index.cshtml.g.cs
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\ProductRating\AddProductRating.cshtml.g.cs
+D:\Cognizant\Retail-Product-Management-System\Retail-Product-Management_system-2\E-CommercePortal\obj\Debug\net5.0\Razor\Views\ProductRating\RatingsOfProduct.cshtml.g.cs

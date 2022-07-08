@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 
@@ -20,11 +21,27 @@ namespace E_CommercePortal.Controllers
             client = new HttpClient();
             client.BaseAddress = new Uri("http://localhost:9000/ProductRatingSvc/");
         }
-        // GET: ProductRatingController
-        [Route("ProductRating/{proId}")]
-        public async Task<ActionResult> IndexOfRating(string proId)
+
+        public async Task<ActionResult> Index()
         {
-            List<ProductRating> pRatings = await client.GetFromJsonAsync<List<ProductRating>>(""+proId);
+            string userName = User.Identity.Name;
+            string roleName = User.Claims.ToArray()[4].Value;
+            string token = await client.GetStringAsync("http://localhost:9000/AuthSvc/?userName=" + userName + "&role=" + roleName + "&key=My name is James Bond");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+            List<ProductRating> ratings = await client.GetFromJsonAsync<List<ProductRating>>("");
+            return View(ratings);
+        }
+
+        // GET: ProductRatingController
+        [Route("RatingsOfProduct/{proId}")]
+        public async Task<ActionResult> RatingsOfProduct(string proId)
+        {
+            string userName = User.Identity.Name;
+            string roleName = User.Claims.ToArray()[4].Value;
+            string token = await client.GetStringAsync("http://localhost:9000/AuthSvc/?userName=" + userName + "&role=" + roleName + "&key=My name is James Bond");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            List<ProductRating> pRatings = await client.GetFromJsonAsync<List<ProductRating>>("RatingsOfProduct/"+proId);
             return View(pRatings);
         }
 
@@ -39,11 +56,15 @@ namespace E_CommercePortal.Controllers
         // POST: ProductRatingController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("ProductRating/AddProductRating")]
+        
         public async Task<ActionResult> AddProductRating(ProductRating proRating)
         {
-               await client.PostAsJsonAsync<ProductRating>("", proRating);
-                return RedirectToAction(nameof(Index));
+            string userName = User.Identity.Name;
+            string roleName = User.Claims.ToArray()[4].Value;
+            string token = await client.GetStringAsync("http://localhost:9000/AuthSvc/?userName=" + userName + "&role=" + roleName + "&key=My name is James Bond");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            await client.PostAsJsonAsync<ProductRating>("", proRating);
+            return RedirectToAction(nameof(Index));
            
         }
     }

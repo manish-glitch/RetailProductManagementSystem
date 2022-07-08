@@ -20,6 +20,7 @@ namespace ProceedToBuyRepository.Models
         public virtual DbSet<Cart> Carts { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Vendor> Vendors { get; set; }
         public virtual DbSet<VendorStock> VendorStocks { get; set; }
         public virtual DbSet<WishList> WishLists { get; set; }
 
@@ -69,17 +70,17 @@ namespace ProceedToBuyRepository.Models
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.Carts)
                     .HasForeignKey(d => d.CustomerId)
-                    .HasConstraintName("FK__Cart__CustomerId__300424B4");
+                    .HasConstraintName("FK__Cart__CustomerId__534D60F1");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.Carts)
                     .HasForeignKey(d => d.ProductId)
-                    .HasConstraintName("FK__Cart__ProductId__2F10007B");
+                    .HasConstraintName("FK__Cart__ProductId__52593CB8");
 
                 entity.HasOne(d => d.Vendor)
                     .WithMany(p => p.Carts)
                     .HasForeignKey(d => d.VendorId)
-                    .HasConstraintName("FK__Cart__VendorId__30F848ED");
+                    .HasConstraintName("FK__Cart__VendorId__5441852A");
             });
 
             modelBuilder.Entity<Customer>(entity =>
@@ -106,10 +107,20 @@ namespace ProceedToBuyRepository.Models
                     .IsFixedLength(true);
             });
 
+            modelBuilder.Entity<Vendor>(entity =>
+            {
+                entity.ToTable("Vendor");
+
+                entity.Property(e => e.VendorId)
+                    .HasMaxLength(4)
+                    .IsUnicode(false)
+                    .IsFixedLength(true);
+            });
+
             modelBuilder.Entity<VendorStock>(entity =>
             {
-                entity.HasKey(e => e.VendorId)
-                    .HasName("PK__VendorSt__FC8618F397E55D09");
+                entity.HasKey(e => new { e.VendorId, e.ProductId })
+                    .HasName("PK__VendorSt__37C6D49FF133A251");
 
                 entity.ToTable("VendorStock");
 
@@ -119,7 +130,6 @@ namespace ProceedToBuyRepository.Models
                     .IsFixedLength(true);
 
                 entity.Property(e => e.ProductId)
-                    .IsRequired()
                     .HasMaxLength(4)
                     .IsUnicode(false)
                     .IsFixedLength(true);
@@ -154,17 +164,17 @@ namespace ProceedToBuyRepository.Models
                 entity.HasOne(d => d.Customer)
                     .WithMany(p => p.WishLists)
                     .HasForeignKey(d => d.CustomerId)
-                    .HasConstraintName("FK__WishList__Custom__35BCFE0A");
+                    .HasConstraintName("FK__WishList__Custom__5BE2A6F2");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.WishLists)
                     .HasForeignKey(d => d.ProductId)
-                    .HasConstraintName("FK__WishList__Produc__34C8D9D1");
+                    .HasConstraintName("FK__WishList__Produc__5AEE82B9");
 
                 entity.HasOne(d => d.Vendor)
                     .WithMany(p => p.WishLists)
                     .HasForeignKey(d => d.VendorId)
-                    .HasConstraintName("FK__WishList__Vendor__33D4B598");
+                    .HasConstraintName("FK__WishList__Vendor__59FA5E80");
             });
 
             OnModelCreatingPartial(modelBuilder);

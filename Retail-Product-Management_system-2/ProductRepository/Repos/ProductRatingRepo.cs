@@ -11,11 +11,17 @@ namespace ProductRepository.Repos
     public class ProductRatingRepo : IProductRatingRepo
     {
         ProductDBContext ctx = new ProductDBContext();
-        public async Task<bool> AddProductRating(ProductRating rating)
+        public async Task AddProductRating(ProductRating rating)
         {
             await ctx.ProductRatings.AddAsync(rating);
             await ctx.SaveChangesAsync();
-            return true;
+            
+        }
+
+        public async Task<List<ProductRating>> GetAllRatings()
+        {
+            List<ProductRating> pRatings = await ctx.ProductRatings.ToListAsync();
+            return pRatings;
         }
 
         public async Task<List<ProductRating>> GetAllRatingsOfProduct(string proId)

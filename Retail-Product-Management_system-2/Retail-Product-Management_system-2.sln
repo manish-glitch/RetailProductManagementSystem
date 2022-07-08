@@ -11,15 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendorRepository", "VendorR
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VendorService", "VendorService\VendorService.csproj", "{7FBA0F1C-EED2-4213-8A30-4423985A0A82}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProceedToBuyRepository", "ProceedToBuyRepository\ProceedToBuyRepository.csproj", "{921E511D-7AD8-4A1A-8138-FD85D26D8453}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProceedToBuyService", "ProceedToBuyService\ProceedToBuyService.csproj", "{65F27A7C-F364-405B-8677-843F5272FE15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIGateway", "APIGateway\APIGateway.csproj", "{6517BABE-E5E2-4346-9BA3-03743C505BC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateway", "APIGateway\APIGateway.csproj", "{6517BABE-E5E2-4346-9BA3-03743C505BC9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthenticationService", "AuthenticationService\AuthenticationService.csproj", "{65697C20-4E97-4D28-91B5-5ABAB276111E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthenticationService", "AuthenticationService\AuthenticationService.csproj", "{65697C20-4E97-4D28-91B5-5ABAB276111E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-CommercePortal", "E-CommercePortal\E-CommercePortal.csproj", "{2F8C0126-7CAA-4E7A-B42A-B34FC7FBE698}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "E-CommercePortal", "E-CommercePortal\E-CommercePortal.csproj", "{2F8C0126-7CAA-4E7A-B42A-B34FC7FBE698}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProceedToBuyRepository", "ProceedToBuyRepository\ProceedToBuyRepository.csproj", "{C9566E23-0BE7-4224-886F-5618914130FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +43,6 @@ Global
 		{7FBA0F1C-EED2-4213-8A30-4423985A0A82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FBA0F1C-EED2-4213-8A30-4423985A0A82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FBA0F1C-EED2-4213-8A30-4423985A0A82}.Release|Any CPU.Build.0 = Release|Any CPU
-		{921E511D-7AD8-4A1A-8138-FD85D26D8453}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{921E511D-7AD8-4A1A-8138-FD85D26D8453}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{921E511D-7AD8-4A1A-8138-FD85D26D8453}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{921E511D-7AD8-4A1A-8138-FD85D26D8453}.Release|Any CPU.Build.0 = Release|Any CPU
 		{65F27A7C-F364-405B-8677-843F5272FE15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{65F27A7C-F364-405B-8677-843F5272FE15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65F27A7C-F364-405B-8677-843F5272FE15}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,6 +59,10 @@ Global
 		{2F8C0126-7CAA-4E7A-B42A-B34FC7FBE698}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F8C0126-7CAA-4E7A-B42A-B34FC7FBE698}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F8C0126-7CAA-4E7A-B42A-B34FC7FBE698}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9566E23-0BE7-4224-886F-5618914130FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9566E23-0BE7-4224-886F-5618914130FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9566E23-0BE7-4224-886F-5618914130FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9566E23-0BE7-4224-886F-5618914130FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,14 +1,22 @@
 ﻿@model IEnumerable<ProductRepository.Models.Product>
-
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
 @{
     ViewData["Title"] = "Index";
 }
 
 <h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+@if (SignInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+{
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+}
+
+<a class="btn btn-primary" href="@Url.Action("GetById", "Product")">Search By Product Id</a>
+<a class="btn btn-primary" href="@Url.Action("GetByName", "Product")">Search By Product Name</a>
+
 <table class="table">
     <thead>
         <tr>
@@ -34,7 +42,8 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model)
+        {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductId)
@@ -54,13 +63,17 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Rating)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { proId = item.ProductId }) |
-                @Html.ActionLink("Details", "Details", new { proId = item.ProductId }) |
-                @Html.ActionLink("Delete", "Delete", new { proId = item.ProductId }) |
-                @Html.ActionLink("DetailsByName", "DetailsByName", new { proName = item.ProductName })
-            </td>
+            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { proId = item.ProductId }) |
+                    @Html.ActionLink("Details", "Details", new { proId = item.ProductId }) |
+                    @Html.ActionLink("Delete", "Delete", new { proId = item.ProductId }) |
+                    @Html.ActionLink("DetailsByName", "DetailsByName", new { proName = item.ProductName })
+                </td>
+            }
+
         </tr>
-}
+        }
     </tbody>
 </table>

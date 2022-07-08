@@ -9,7 +9,7 @@ namespace ProceedToBuyRepository.Repos
 {
     public interface ICartRepo
     {
-        Task<VendorStock> GetVendorStock(string venId, string proId);
+        Task<VendorStock> getVendorStockOfProduct(string venId, string proId);
         Task<List<Cart>> GetAllCarts();
         Task<List<Cart>> GetCartsByCustomerId(string custId);
         Task<List<Cart>> GetCartsByproductId(string proId);//admin only()

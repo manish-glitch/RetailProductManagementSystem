@@ -49,6 +49,7 @@ namespace ProceedToBuyService
                     {
                         dbContext.VendorStocks.Add(new VendorStock() { VendorId = data["VendorId"].Value<string>(), StockInHand = data["StockInHand"].Value<int>(), ProductId = data["ProductId"].Value<string>() });
                         dbContext.Products.Add(new Product() { ProductId = data["ProductId"].Value<string>()});
+                        dbContext.Vendors.Add(new Vendor() { VendorId = data["VendorId"].Value<string>() });
                         dbContext.SaveChanges();
 
                     }

@@ -64,8 +64,16 @@ namespace E_CommercePortal.Controllers
             string roleName = User.Claims.ToArray()[4].Value;
             string token = await client.GetStringAsync("http://localhost:9000/AuthSvc/?userName=" + userName + "&role=" + roleName + "&key=My name is James Bond");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            VendorStock venStock = await client.GetFromJsonAsync<VendorStock>("GetVendorStock/" + venId + "/" + proId);
-            return venStock;
+            try
+            {
+                VendorStock venStock = await client.GetFromJsonAsync<VendorStock>("getVendorStockOfProduct/" + venId + "/" + proId);
+                return venStock;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Product not available");
+               
+            }
         }
 
 
@@ -91,13 +99,15 @@ namespace E_CommercePortal.Controllers
                 if (venStock.StockInHand != 0)
                 {
                     await client.PostAsJsonAsync<Cart>("",cart);
-                    return RedirectToAction(nameof(Index));
+                    
+                    return View("CartSuccess");
 
                 }
                 else
                 {
-                    //filter required
-                    throw new Exception("not in stock");
+                //filter required
+                    
+                    return View("CartError");
                     
                 }
                               

@@ -68,12 +68,12 @@ namespace ProceedToBuyService.Controllers
                 return NotFound(ex.Message);
             }
         }
-        [HttpGet("GetVendorStock/{venId}/{proId}")]
+        [HttpGet("getVendorStockOfProduct/{venId}/{proId}")]
         public async Task<ActionResult<VendorStock>> GetVendorStock(string venId,string proId)
         {
             try
             {
-                VendorStock venStock = await cRepo.GetVendorStock(venId, proId);
+                VendorStock venStock = await cRepo.getVendorStockOfProduct(venId, proId);
                 return venStock;
             }
             catch(Exception ex)

@@ -20,17 +20,23 @@ namespace ProductService.Controllers
         {
             pRatingRepo = prRepo;
         }
-        [HttpGet("{proId}")]
+        [HttpGet]
+        public async Task<ActionResult<List<ProductRating>>> GetAllRatings()
+        {
+            List<ProductRating> pRatings = await pRatingRepo.GetAllRatings();
+            return Ok(pRatings);
+        }
+        [HttpGet("RatingsOfProduct/{proId}")]
         public async Task<ActionResult<List<ProductRating>>> GetAll(string proId)
         {
             List<ProductRating> pratings = await pRatingRepo.GetAllRatingsOfProduct(proId);
             return Ok(pratings);
         }
         [HttpPost]
-        public async Task<ActionResult<bool>> AddProductRating(ProductRating prodRating)
+        public async Task<ActionResult> AddProductRating(ProductRating prodRating)
         {
             await pRatingRepo.AddProductRating(prodRating);
-            return true;
+            return Created($"api/ProductRating/{prodRating.RatingId}",prodRating);
         }
     }
 }

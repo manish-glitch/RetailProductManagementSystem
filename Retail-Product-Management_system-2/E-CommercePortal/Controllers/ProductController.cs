@@ -25,6 +25,24 @@ namespace E_CommercePortal.Controllers
             client.BaseAddress= new Uri("http://localhost:9000/ProductSvc/");
         }
 
+        public async Task<IActionResult> GetById()
+        {
+            string userName = User.Identity.Name;
+            string roleName = User.Claims.ToArray()[4].Value;
+            string token = await client.GetStringAsync("http://localhost:9000/AuthSvc/?userName=" + userName + "&role=" + roleName + "&key=My name is James Bond");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            return View();
+        }
+
+        public async Task<IActionResult> GetByName()
+        {
+            string userName = User.Identity.Name;
+            string roleName = User.Claims.ToArray()[4].Value;
+            string token = await client.GetStringAsync("http://localhost:9000/AuthSvc/?userName=" + userName + "&role=" + roleName + "&key=My name is James Bond");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            return View();
+        }
+
 
         // GET: ProductController
         [Route("GetAllProducts")]
@@ -52,7 +70,7 @@ namespace E_CommercePortal.Controllers
         }
 
         //Get: ProductController/Details/proName
-        [Route("DetailsByName/{proName}")]
+        //[Route("DetailsByName/{proName}")]
         public async Task<ActionResult<Product>> DetailsByName(string proName)
         {
             string userName = User.Identity.Name;

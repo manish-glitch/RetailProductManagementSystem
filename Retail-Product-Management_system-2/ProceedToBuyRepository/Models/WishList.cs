@@ -16,6 +16,6 @@ namespace ProceedToBuyRepository.Models
 
         public virtual Customer Customer { get; set; }
         public virtual Product Product { get; set; }
-        public virtual VendorStock Vendor { get; set; }
+        public virtual Vendor Vendor { get; set; }
     }
 }

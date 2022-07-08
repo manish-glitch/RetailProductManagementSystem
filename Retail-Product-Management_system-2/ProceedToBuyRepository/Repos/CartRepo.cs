@@ -69,7 +69,7 @@ namespace ProceedToBuyRepository.Repos
             }
         }
 
-        public async Task<VendorStock> GetVendorStock(string venId, string proId)
+        public async Task<VendorStock> getVendorStockOfProduct(string venId, string proId)
         {
             try
             {

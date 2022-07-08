@@ -11,8 +11,9 @@ namespace ProductRepository.Repos
     {
         //GetRatingBYCustomerId
         //GetRatingByPProductId
+        Task<List<ProductRating>> GetAllRatings();
         Task<List<ProductRating>> GetAllRatingsOfProduct(string proId);
        
-        Task<bool> AddProductRating(ProductRating rating);
+        Task AddProductRating(ProductRating rating);
     }
 }

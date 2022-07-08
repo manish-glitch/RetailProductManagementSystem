@@ -26,7 +26,7 @@ namespace VendorRepository.Repos
         {
             try
             {
-                VendorStock venStock = await (from v in ctx.VendorStocks where v.VendorId == venId && v.ProductId == proId && v.StockInHand!=0 select v).FirstAsync();
+                VendorStock venStock = await (from v in ctx.VendorStocks where v.VendorId == venId && v.ProductId == proId select v).FirstAsync();
                 return venStock;
             }
             catch (Exception)
