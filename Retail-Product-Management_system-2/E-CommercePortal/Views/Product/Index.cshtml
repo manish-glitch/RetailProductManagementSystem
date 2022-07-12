@@ -16,7 +16,8 @@
 
 <a class="btn btn-primary" href="@Url.Action("GetById", "Product")">Search By Product Id</a>
 <a class="btn btn-primary" href="@Url.Action("GetByName", "Product")">Search By Product Name</a>
-
+@if (SignInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+{
 <table class="table">
     <thead>
         <tr>
@@ -44,36 +45,64 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ProductDescription)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Image_name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rating)
-            </td>
-            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
-            {
+            <tr>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { proId = item.ProductId }) |
-                    @Html.ActionLink("Details", "Details", new { proId = item.ProductId }) |
-                    @Html.ActionLink("Delete", "Delete", new { proId = item.ProductId }) |
-                    @Html.ActionLink("DetailsByName", "DetailsByName", new { proName = item.ProductName })
+                    @Html.DisplayFor(modelItem => item.ProductId)
                 </td>
-            }
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductDescription)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Image_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { proId = item.ProductId }) |
+                        @Html.ActionLink("Details", "Details", new { proId = item.ProductId }) |
+                        @Html.ActionLink("Delete", "Delete", new { proId = item.ProductId }) |
+                        @Html.ActionLink("DetailsByName", "DetailsByName", new { proName = item.ProductName })
+                    </td>
+                
 
-        </tr>
+            </tr>
         }
     </tbody>
+
+
 </table>
+}
+@if (SignInManager.IsSignedIn(User) && User.IsInRole("Customer"))
+{
+@foreach (var item in Model)
+{
+    <div class="container">
+        <div class="row m-1 ">
+            <div class="col-4 ">
+                <img class="d-block w-50" src="@Html.DisplayFor(modelItem => item.Image_name)" alt="First slide">
+
+            </div>
+            <div class="col-8 ">
+                @Html.DisplayFor(modelItem => item.ProductId)
+                <br>
+                @Html.DisplayFor(modelItem => item.ProductName)
+                <br>
+                @Html.DisplayFor(modelItem => item.ProductDescription)
+                <br>
+                @Html.DisplayFor(modelItem => item.Price)
+                <br>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </div>
+        </div>
+
+    </div>
+}
+}

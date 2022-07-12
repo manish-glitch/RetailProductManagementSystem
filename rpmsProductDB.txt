@@ -5,7 +5,7 @@ create table Product(
 	ProductId char(4) primary key,
 	ProductName varchar(20) not null,
 	ProductDescription varchar(50),
-	Image_name varchar(30),
+	Image_name varchar(512),
 	Price money,
 	Rating int check(Rating>=0 and Rating<=5 )
 )
