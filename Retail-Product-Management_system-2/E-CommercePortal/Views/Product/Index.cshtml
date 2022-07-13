@@ -13,13 +13,14 @@
         <a asp-action="Create">Add new Product</a>
     </p>
 }
-
-<a class="btn btn-primary" href="@Url.Action("GetById", "Product")">Search By Product Id</a>
-<a class="btn btn-primary" href="@Url.Action("GetByName", "Product")">Search By Product Name</a>
+<div class="m-3">
+    <a class="btn btn-primary m-2" href="@Url.Action("GetById", "Product")">Search By Product Id</a>
+    <a class="btn btn-primary" href="@Url.Action("GetByName", "Product")">Search By Product Name</a>
+</div>
 @if (SignInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
 {
-<table class="table">
-    <thead>
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.ProductId)
@@ -85,23 +86,23 @@
 @foreach (var item in Model)
 {
     <div class="container">
-        <div class="row m-1 ">
+        <span class="row mb-2 border">
             <div class="col-4 ">
-                <img class="d-block w-50" src="@Html.DisplayFor(modelItem => item.Image_name)" alt="First slide">
+                <img class="d-block w-50 border rounded-3" src="@Html.DisplayFor(modelItem => item.Image_name)" alt="First slide">
 
             </div>
             <div class="col-8 ">
-                @Html.DisplayFor(modelItem => item.ProductId)
-                <br>
-                @Html.DisplayFor(modelItem => item.ProductName)
-                <br>
-                @Html.DisplayFor(modelItem => item.ProductDescription)
-                <br>
-                @Html.DisplayFor(modelItem => item.Price)
-                <br>
-                @Html.DisplayFor(modelItem => item.Rating)
+                <span>Product Id :  @Html.DisplayFor(modelItem => item.ProductId)</span>
+                <br />
+                <span>Product Name : @Html.DisplayFor(modelItem => item.ProductName) </span>
+                <br />
+                <span>Description :  @Html.DisplayFor(modelItem => item.ProductDescription)</span>
+                <br />
+                <span>Product Price :  @Html.DisplayFor(modelItem => item.Price)</span>
+                <br />
+                <span>Rating :  @Html.DisplayFor(modelItem => item.Rating)</span>
             </div>
-        </div>
+        </span>
 
     </div>
 }

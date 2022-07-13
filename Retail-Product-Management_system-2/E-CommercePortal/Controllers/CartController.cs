@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using E_CommercePortal.Filters;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProceedToBuyRepository.Models;
@@ -77,11 +78,18 @@ namespace E_CommercePortal.Controllers
         }
 
 
-        // GET: CartController/Create
-        public ActionResult AddToCart()
-        {
 
-            return View();
+        // GET: CartController/Create
+        public async Task<ActionResult> AddToCart(string productId)
+        {
+            string userName = User.Identity.Name;
+            string roleName = User.Claims.ToArray()[4].Value;
+            string token = await client.GetStringAsync("http://localhost:9000/AuthSvc/?userName=" + userName + "&role=" + roleName + "&key=My name is James Bond");
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            Cart cart = new Cart();
+            cart.ProductId = productId;
+            ViewBag.vendorList = await RepoHelper.GetAllVendors(productId);
+            return View(cart);
         }
         
 

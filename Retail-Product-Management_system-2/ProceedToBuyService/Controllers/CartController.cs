@@ -20,7 +20,12 @@ namespace ProceedToBuyService.Controllers
         {
             cRepo = repo;
         }
-
+        [HttpGet("GetVendorStockByProductId/{proId}")]
+        public async Task<ActionResult<List<VendorStock>>> GetVendorStockByProductId(string proId)
+        {
+            List<VendorStock> vendors = await cRepo.GetVendorStockByProductId(proId);
+            return vendors;
+        }
         [HttpGet]
         public async Task<ActionResult<List<Cart>>> GetAllCarts()
         {

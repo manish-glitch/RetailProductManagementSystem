@@ -1,10 +1,10 @@
 ﻿@model ProceedToBuyRepository.Models.Cart
-
+@using Microsoft.AspNetCore.Identity
 @{
     ViewData["Title"] = "AddToCart";
 }
 
-<h1>AddToCart</h1>
+<h1>Add Product To Cart</h1>
 
 <h4>Cart</h4>
 <hr />
@@ -12,11 +12,7 @@
     <div class="col-md-4">
         <form asp-action="AddToCart">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CartId" class="control-label"></label>
-                <input asp-for="CartId" class="form-control" />
-                <span asp-validation-for="CartId" class="text-danger"></span>
-            </div>
+            
             <div class="form-group">
                 <label asp-for="ProductId" class="control-label"></label>
                 <input asp-for="ProductId" class="form-control" />
@@ -24,17 +20,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="CustomerId" class="control-label"></label>
-                <input asp-for="CustomerId" class="form-control" />
+                <input asp-for="CustomerId" class="form-control" placeholder="ex. C001"  />
                 <span asp-validation-for="CustomerId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="VendorId" class="control-label"></label>
-                <input asp-for="VendorId" class="form-control" />
+                @Html.DropDownListFor(model => model.VendorId, (IEnumerable<SelectListItem>)ViewBag.vendorList, "Select", new { HtmlAttributes = new { @class = "form-control" } })
                 <span asp-validation-for="VendorId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Zipcode" class="control-label"></label>
-                <input asp-for="Zipcode" class="form-control" />
+                <input asp-for="Zipcode" class="form-control" placeholder="ex. 411033"/>
                 <span asp-validation-for="Zipcode" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -43,7 +39,7 @@
                 <span asp-validation-for="DeliveryDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="AddToCart" class="btn btn-primary" />
             </div>
         </form>
     </div>

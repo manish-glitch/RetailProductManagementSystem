@@ -17,7 +17,7 @@ create table Customer(
 	CustomerName varchar(20)
 )
 create table Cart(
-	CartId char(4) primary key,
+	CartId int primary key Identity(1,1),
 	ProductId char(4) references Product(ProductId),
 	CustomerId char(4) references Customer(CustomerId),
 	VendorId char(4) references Vendor(VendorId),

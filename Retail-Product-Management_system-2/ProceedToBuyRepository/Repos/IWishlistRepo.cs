@@ -9,6 +9,7 @@ namespace ProceedToBuyRepository.Repos
 {
     public interface IWishlistRepo
     {
+        Task<List<VendorStock>> GetVendorStockByProductId(string proId);
         Task<List<WishList>> GetAllWishlist();
         Task<List<WishList>> GetWishlistsByCustomerId(string custId);
         Task<List<WishList>> GetWishListsByProductId(string proId);

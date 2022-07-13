@@ -69,6 +69,12 @@ namespace ProceedToBuyRepository.Repos
             }
         }
 
+        public async Task<List<VendorStock>> GetVendorStockByProductId(string proId)
+        {
+            List<VendorStock> vendors = await(from vs in ctx.VendorStocks where vs.ProductId == proId select vs).ToListAsync();
+            return vendors;
+        }
+
         public async Task<VendorStock> getVendorStockOfProduct(string venId, string proId)
         {
             try
