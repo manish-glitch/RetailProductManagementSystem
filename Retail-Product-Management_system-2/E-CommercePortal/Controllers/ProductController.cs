@@ -65,8 +65,16 @@ namespace E_CommercePortal.Controllers
             string roleName = User.Claims.ToArray()[4].Value;
             string token = await client.GetStringAsync("http://localhost:9000/AuthSvc/?userName=" + userName + "&role=" + roleName + "&key=My name is James Bond");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            Product pro = await client.GetFromJsonAsync<Product>("GetProductById/"+ proId);
-            return View(pro);
+            try
+            {
+
+                Product pro = await client.GetFromJsonAsync<Product>("GetProductById/"+ proId);
+                return View(pro);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Invalid Product Id");
+            }
         }
 
         //Get: ProductController/Details/proName
@@ -77,8 +85,16 @@ namespace E_CommercePortal.Controllers
             string roleName = User.Claims.ToArray()[4].Value;
             string token = await client.GetStringAsync("http://localhost:9000/AuthSvc/?userName=" + userName + "&role=" + roleName + "&key=My name is James Bond");
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            Product pro = await client.GetFromJsonAsync<Product>("GetProductByName/" + proName);
-            return View(pro);
+            try
+            {
+
+                Product pro = await client.GetFromJsonAsync<Product>("GetProductByName/" + proName);
+                return View(pro);
+            }
+            catch (Exception)
+            {
+                throw new Exception("No Product with this Name!");
+            }
         }
 
         // GET: ProductController/Create
